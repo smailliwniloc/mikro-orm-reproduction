@@ -1,0 +1,9 @@
+{
+  "name": "mssql-v6",
+  "private": true,
+  "description": "MikroORM 6.6.16 install, used for the side-by-side comparison",
+  "dependencies": {
+    "@mikro-orm/core": "6.6.16",
+    "@mikro-orm/mssql": "6.6.16"
+  }
+}

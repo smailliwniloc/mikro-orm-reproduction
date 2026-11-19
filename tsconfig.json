@@ -1,14 +1,11 @@
 {
-  "compilerOptions": {
-    "module": "NodeNext",
-    "target": "ESNext",
-    "strict": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "esModuleInterop": true,
-    "types": ["vitest/globals", "node"]
-  },
-  "include": [
-    "./src/**/*.ts"
-  ]
+    "compilerOptions": {
+        "module": "NodeNext",
+        "target": "ESNext",
+        "strict": true,
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "types": ["node"]
+    },
+    "include": ["./shared/**/*.ts", "./v6/**/*.ts", "./v7/**/*.ts"]
 }

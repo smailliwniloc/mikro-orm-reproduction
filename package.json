@@ -1,24 +1,21 @@
 {
-  "name": "@mikro-orm/reproduction",
-  "private": true,
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "start": "vitest run",
-    "test": "vitest run",
-    "typecheck": "tsc --noEmit"
-  },
-  "author": "Martin Adamek",
-  "license": "MIT",
-  "dependencies": {
-    "@mikro-orm/core": "next",
-    "@mikro-orm/decorators": "next",
-    "@mikro-orm/sqlite": "next",
-    "reflect-metadata": "^0.2.2"
-  },
-  "devDependencies": {
-    "@types/node": "^25.5.0",
-    "typescript": "^5.8.0",
-    "vitest": "^4.1.0"
-  }
+    "name": "@mikro-orm/reproduction",
+    "private": true,
+    "description": "MSSQL: three-part tableName (database.schema.table) is quoted as [db].[schema.table] in v7",
+    "workspaces": [
+        "v6",
+        "v7"
+    ],
+    "scripts": {
+        "start": "vitest run",
+        "test": "vitest run",
+        "typecheck": "tsc --noEmit"
+    },
+    "author": "Martin Adamek",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^25.5.0",
+        "typescript": "^5.8.0",
+        "vitest": "^4.1.0"
+    }
 }
