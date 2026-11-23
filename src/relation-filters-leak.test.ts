@@ -183,6 +183,19 @@ test("createdBy { filters: false } should not affect author", async () => {
     expect(await titles(BookFiltersOff)).toEqual(["by deleted user"]);
 });
 
+test("createdBy { filters: { softDelete: false } } should not affect author with select-in populate", async () => {
+    // Joined/balanced populate filters the author join itself, so they are unaffected here.
+    const books = await orm.em
+        .fork()
+        .find(
+            BookSoftDeleteOff,
+            {},
+            { populate: ["author"], strategy: "select-in" },
+        );
+    // actual: also returns 'by deleted author' with an unloaded author reference
+    expect(books.map((book) => book.title).sort()).toEqual(["by deleted user"]);
+});
+
 test("createdBy { filters: false } should not affect author joins from where conditions", async () => {
     // actual: ['by deleted author'], the author join has no `deleted_at is null`
     expect(
